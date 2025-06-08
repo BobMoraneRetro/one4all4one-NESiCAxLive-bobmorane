@@ -32,9 +32,9 @@ Logo for manufacturer are located here _gamemedia\_manufacturer bame must be the
 | ------------- | ------------- | ------------- |
 | ![specific](https://github.com/user-attachments/assets/32a7e3a5-d69b-42d4-8e27-fa624feb31fb)  | ![standard](https://github.com/user-attachments/assets/c4350b94-6aa3-4948-a694-4c7ed8716b75)  | ![generic](https://github.com/user-attachments/assets/57e808ea-ce27-4593-b13a-111fbea5308e)  | 
 
-| Defaut generic theme for gameview  | Defaut generic theme for systemview
+| NESiCAxLive system view | NESiCAxLive gameview 1.0
 | ------------- | ------------- |
-| ![genericdefaut](https://github.com/user-attachments/assets/ee95b902-d2af-4d89-9061-52a467ea8d7b)  | ![genericsystem](https://github.com/user-attachments/assets/f6023f97-7684-43e4-bf42-7feef0e6cffd)  | 
+| ![system](https://github.com/user-attachments/assets/3e17bcfd-a535-4910-84d6-8a9b8ddd5992)  | ![game1](https://github.com/user-attachments/assets/1f3897ed-f780-4c26-a5be-19391e74ab94)  | 
 
 ### License :
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)  
