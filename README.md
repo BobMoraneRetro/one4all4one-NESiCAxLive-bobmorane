@@ -36,6 +36,10 @@ Logo for manufacturer are located here _gamemedia\_manufacturer bame must be the
 | ------------- | ------------- |
 | ![system](https://github.com/user-attachments/assets/3e17bcfd-a535-4910-84d6-8a9b8ddd5992)  | ![game1](https://github.com/user-attachments/assets/1f3897ed-f780-4c26-a5be-19391e74ab94)  | 
 
+| NESiCAxLive demo mode | NESiCAxLive gameview 2.0
+| ------------- | ------------- |
+| ![demomode](https://github.com/user-attachments/assets/c072546d-4373-450c-b7f0-c10d18974575)  | ![view2](https://github.com/user-attachments/assets/043d9544-0830-42c3-b98a-cf7dd046ff85)  | 
+
 ### License :
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)  
 https://creativecommons.org/licenses/by-nc-sa/4.0/
