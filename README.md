@@ -40,6 +40,14 @@ Logo for manufacturer are located here _gamemedia\_manufacturer bame must be the
 | ------------- | ------------- |
 | ![demomode](https://github.com/user-attachments/assets/c072546d-4373-450c-b7f0-c10d18974575)  | ![view2](https://github.com/user-attachments/assets/043d9544-0830-42c3-b98a-cf7dd046ff85)  | 
 
+You can also configure number of games per grid if needed :
+
+| more games on the grid |
+| ------------- |
+| ![Image](https://github.com/user-attachments/assets/5fc1a862-7dae-41e9-b190-a3faf15feb1e)  |
+
+
+
 ### License :
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)  
 https://creativecommons.org/licenses/by-nc-sa/4.0/
