@@ -30,18 +30,11 @@ Logo for manufacturer are located here _gamemedia\_manufacturer bame must be the
 
 | Specific game banner  | Standard game banner | Generic game banner |
 | ------------- | ------------- | ------------- |
-| ![Specificbanner](https://github.com/user-attachments/assets/14f4fba5-4904-4229-bc0e-4aee6285f784)  | ![standardbanner](https://github.com/user-attachments/assets/fe3827d7-b2da-4086-b3b6-dc3a725aa07a)  | ![genericbanner](https://github.com/user-attachments/assets/e81f9832-3f37-452e-b624-ed9ba7054a71)  | 
+| ![specific](https://github.com/user-attachments/assets/32a7e3a5-d69b-42d4-8e27-fa624feb31fb)  | ![standard](https://github.com/user-attachments/assets/c4350b94-6aa3-4948-a694-4c7ed8716b75)  | ![generic](https://github.com/user-attachments/assets/57e808ea-ce27-4593-b13a-111fbea5308e)  | 
 
 | Defaut generic theme for gameview  | Defaut generic theme for systemview
 | ------------- | ------------- |
 | ![genericdefaut](https://github.com/user-attachments/assets/ee95b902-d2af-4d89-9061-52a467ea8d7b)  | ![genericsystem](https://github.com/user-attachments/assets/f6023f97-7684-43e4-bf42-7feef0e6cffd)  | 
-
-# Tool to create Gameview, System-view or System-defaut view
-
-You can make your own theme for games or system with the app' we develop, like old hypertheme : just put some artwork, place the video, place boxart or what you want and choose animation to apply on each image and video and generate it automatically. Preview it in real time on your 2nd screen directly in retrobat or batocera by navigate on the game (no reboot needed)
-Yo can even import *.psd with artwork aldready in place. Explanation, tutorial and up to date app' version availlable on discord
-
-![Image](https://github.com/user-attachments/assets/29c2b596-d2cf-4d8e-b5ae-ee1d484aa2e2)
 
 ### License :
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)  
