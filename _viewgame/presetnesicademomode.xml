@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<formatVersion>7</formatVersion>
+	<!--custom-->
+	<customView name="nesicaxlivedemomode" inherits="grid">
+			<video name="md_video">
+			<visible>false</visible>
+		</video>
+		<imagegrid name="gamegrid">
+			<autoLayout>6 1</autoLayout>
+			<scrollDirection>horizontal</scrollDirection>
+			<gameImage>${themePath}/_viewgame/nesicaxlive/01Background.png</gameImage>
+			<autoLayoutSelectedZoom>1.1</autoLayoutSelectedZoom>
+			<margin>-0.007 -0.002</margin>
+			<size>0.95 0.125</size>
+			<pos>0.025 0.8</pos>
+			<!-- <padding>0.4 0.4 0.4 0.4</padding> -->
+			<imageSource>fanart</imageSource>
+			<scrollbarColor>808080FF</scrollbarColor>
+			<scrollbarCorner>0</scrollbarCorner>
+			<scrollbarSize>0.002</scrollbarSize>
+			<scrollSound>${themePath}/_viewgame/nesicaxlive/click.mp3</scrollSound>
+			<zIndex>60</zIndex>
+			<!-- <padding>0 0.025</padding> option à ajouter -->
+			<padding>0 0.025</padding>
+			<linearSmooth>true</linearSmooth>
+		</imagegrid>
+		<text name="gridtile_selected">
+			<color>FFFFFF</color>
+			<glowColor>ffffff</glowColor>
+			<glowSize>2</glowSize>
+		</text>
+		<gridtile name="selected">
+			<padding>8</padding>
+			<imageColor>ffffffff</imageColor>
+			<backgroundCornerSize>0</backgroundCornerSize>
+			<backgroundEdgeColor>909090</backgroundEdgeColor>
+		</gridtile>
+		<!-- cadre clignotant -->
+		<ninepatch name="gridtile.background:selected">
+			<path>${themePath}/_viewgame/nesicaxlive/gameglow2.png</path>
+			<linearSmooth>true</linearSmooth>
+			<cornerSize>0 0</cornerSize>
+			<padding>-3 -3</padding>
+			<color>ffffff</color>
+			<animateColor>141414</animateColor>
+			<animateColorTime>250</animateColorTime>
+			<zIndex>500</zIndex>
+		</ninepatch>
+		<imagegrid name="gamegrid">
+			<showVideoAtDelay>-1</showVideoAtDelay>
+		</imagegrid>
+		<image name="gridtile.favorite">
+			<path>${themePath}/_viewgame/nesicaxlive/favorite.png</path>
+			<linearSmooth>true</linearSmooth>
+			<pos>0.918 0</pos>
+			<maxSize>0.34 0.36</maxSize>
+			<origin>0 0</origin>
+			<color>A0A0A0A0</color>
+		</image>
+		<image name="gridtile.favorite:selected">
+			<path>${themePath}/_viewgame/nesicaxlive/gridfav.png</path>
+			<linearSmooth>true</linearSmooth>
+			<color>f1c232</color>
+		</image>
+		<gridtile name="default">
+			<backgroundCenterColor>40404080</backgroundCenterColor>
+			<backgroundEdgeColor>00000000</backgroundEdgeColor>
+			<padding>8 8</padding>
+			<imageSizeMode>minSize</imageSizeMode>
+			<backgroundCornerSize>0 0</backgroundCornerSize>
+			<backgroundColor>42424200</backgroundColor>
+			<imageColor>6d6d6dFF</imageColor>
+		</gridtile>
+		<image name="gridtile.image">
+			<linearSmooth>true</linearSmooth>
+			<pos>0.5 0.5</pos>
+			<!-- <size>1 1.5</size> -->
+			<roundCorners>0</roundCorners>
+		</image>
+		<image name="gridtile.marquee">
+			<linearSmooth>true</linearSmooth>
+			<color>dadadaff</color>
+			<pos>0.5 0.5</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.70 0.70</size>
+		</image>
+		<image name="gridtile.marquee:selected">
+			<linearSmooth>true</linearSmooth>
+			<color>FFFFFFFF</color>
+			<size>0.85 0.85</size>
+		</image>
+		<text name="gridtile">
+			<visible>false</visible>
+		</text>
+		<!-- Interface Utilisateur -->
+		<image name="Background" extra="true">
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive/01Background.png</path>
+			<gradientType>horizontal</gradientType>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>1</zIndex>
+		</image>
+		<image name="bandeaujeu" extra="true">
+			<pos>0.5 0.771</pos>
+			<origin>0.5 0.5</origin>
+			<size>1 0.33</size>
+			<path>${themePath}/_viewgame/nesicaxlive/04gridback.png</path>
+			<gradientType>horizontal</gradientType>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>1</zIndex>
+		</image>
+		<image name="SousGrille" extra="true">
+			<pos>0 0.008</pos>
+			<origin>0 0</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive/04gridsmall.png</path>
+			<gradientType>horizontal</gradientType>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>1</zIndex>
+		</image>
+		<!-- Image et video centrales -->
+		<image name="Game_image" extra="true">
+			<autoFade>false</autoFade>
+			<pos>0.5 0.435</pos>
+			<path>({game:image})</path>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.9 0.77</maxSize>
+			<zIndex>1</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<storyboard event="open">
+				<animation enabled="exists({game:video})" property="color" to="000000" begin="750" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="activateNext">
+				<animation enabled="exists({game:video})" property="color" to="000000" begin="750" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="activatePrev">
+				<animation enabled="exists({game:video})" property="color" to="000000" begin="750" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="deactivateNext">
+				<animation property="opacity" to="0" begin="25" duration="" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="deactivatePrev">
+				<animation property="opacity" to="0" begin="25" duration="" mode="easeIn"/>
+			</storyboard>
+		</image>
+		<video name="gameplaynesica" extra="true">
+			<path>({game:video})</path>
+			<pos>0.5 0.435</pos>
+			<maxSize>0.9 0.77</maxSize>
+			<origin>0.5 0.5</origin>
+			<showSnapshotNoVideo>false</showSnapshotNoVideo>
+			<showSnapshotDelay>false</showSnapshotDelay>
+			<loops>3</loops>
+			<delay>0.5</delay>
+			<effect>none</effect>
+			<zIndex>2</zIndex>
+		</video>
+		<!-- Elements dynamique textuels -->
+		<text name="gamenamedemomode" extra="true">
+			<text>{game:name}</text>
+			<color>ffffffff</color>
+			<pos>0.5 0.022</pos>
+			<size>0.9 0.05</size>
+			<glowColor>00000016</glowColor>
+			<glowSize>1</glowSize>
+			<fontSize>0.03</fontSize>
+			<fontPath>${themePath}/_viewgame/nesicaxlive/impact.ttf</fontPath>
+			<zIndex>150</zIndex>
+			<origin>0.5 0.5</origin>
+			<alignment>center</alignment>
+		</text>
+		<text name="gameDesc" extra="true">
+			<alignment>left</alignment>
+			<verticalAlignment>bottom</verticalAlignment>
+			<singleLineScroll>true</singleLineScroll>
+			<text>{game:desc}</text>
+			<color>ffffffff</color>
+			<pos>0.5 0.699</pos>
+			<origin>0 0.5</origin>
+			<size>0.98 0.5</size>
+			<glowColor>000000</glowColor>
+			<glowSize>1</glowSize>
+			<fontSize>0.03</fontSize>
+			<fontPath>./_Common/fonts/aura4k.ttf</fontPath>
+			<zIndex>150</zIndex>
+			<origin>0.5 0.5</origin>
+			<opacity>0.7</opacity>
+		</text>
+		<helpsystem name="help">
+			<iconColor>FFFFFF</iconColor>
+			<fontSize>0.02</fontSize>
+			<origin>0.5 0.5</origin>
+			<pos>0.5 0.985</pos>
+			<fontPath>./_Common/fonts/Digital-Serial-Bold-folder.ttf</fontPath>
+		</helpsystem>
+		<image name="vignette" extra="true">
+			<pos>0.5 0.5</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive//vignette.png</path>
+			<gradientType>horizontal</gradientType>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>500</zIndex>
+			<opacity>1</opacity>
+		</image>
+	</customView>
+</theme>
