@@ -46,7 +46,11 @@ You can also configure number of games per grid if needed :
 | ------------- |
 | ![Image](https://github.com/user-attachments/assets/5fc1a862-7dae-41e9-b190-a3faf15feb1e)  |
 
+Some cool features like dynamic control per games :
 
+| Number of buttons for arcade  | If game is wheel or gun | Console controler and favorites |
+| ------------- | ------------- | ------------- |
+| ![Image](https://github.com/user-attachments/assets/f8d38650-0a2a-4742-ab0e-051043161be2)  | ![Image](https://github.com/user-attachments/assets/94f6fecc-ca0d-4582-931f-45e14dc5693c)  | ![Image](https://github.com/user-attachments/assets/873992ee-c65a-427c-81e2-75026a154ce9)  | 
 
 ### License :
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)  
