@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<formatVersion>7</formatVersion>
+	<customView name="nesicaxlive2" displayName="${nesicaxlive2}" inherits="grid">
+		<control name="fanart_extra, defautfanartextra">
+			<visible>false</visible>
+		</control>
+		<video name="md_video">
+			<visible>false</visible>
+		</video>
+		<!-- ############################# Menu de séléction des jeux ################################################################## -->
+		<imagegrid name="gamegrid">
+			<pos>0.025 0.04</pos>
+			<size>0.950 0.16</size>
+			<autoLayout>3 1</autoLayout>
+			<animateSelection>false</animateSelection>
+			<zIndex>60</zIndex>
+			<autoLayoutSelectedZoom>1.2</autoLayoutSelectedZoom>
+			<imageSource ifSubset="custombuilds:standardbuilds">fanart</imageSource>
+			<imageSource ifSubset="custombuilds:retrofreshbat">image</imageSource>
+			<padding>0 0.025</padding>
+			<margin>0.02 -0.04</margin>
+			<centerSelection>true</centerSelection>
+			<scrollDirection>horizontal</scrollDirection>
+			<!-- <scrollbar>false</scrollbar> -->
+			<scrollSound>${themePath}/_viewgame/nesicaxlive/Click.mp3</scrollSound>
+			<showVideoAtDelay>-1</showVideoAtDelay>
+			<itemTemplate>
+				<storyboard event="activate">
+					<animation property="scale" to="1.2" duration="150" mode="easeOut"/>
+				</storyboard>
+				<storyboard event="deactivate">
+					<animation property="scale" to="1" duration="250" mode="easeOut"/>
+				</storyboard>
+				<container>
+					<image name="backgroundtile">
+						<linearSmooth>true</linearSmooth>
+						<path ifSubset="custombuilds:standardbuilds">${standardsbuildsfanart}</path>
+						<path ifSubset="custombuilds:retrofreshbat">${freshbuildfanart}</path>
+						<path if="{system.theme} == 'switch'">${extgameartpng}</path>
+						<pos>0 0</pos>
+						<origin>0 0</origin>
+						<minSize>1.04 1</minSize>
+						<minSize if="{system.theme} == 'switch'">1.04 1</minSize>
+						<scale>0.95</scale>
+						<zIndex>3</zIndex>
+						<storyboard event="activate">
+							<animation property="color" to="FFFFFFFF" begin="" duration="150" mode="Linear"/>
+						</storyboard>
+						<storyboard event="deactivate">
+							<animation property="color" to="858585ff" begin="" duration="250" mode="Linear"/>
+						</storyboard>
+						<storyboard event="scroll">
+							<animation property="color" to="858585ff" begin="" duration="250" mode="Linear"/>
+						</storyboard>
+					</image>
+					<image name="nofanart">
+						<visible ifSubset="custombuilds:standardbuilds">!exists({game:fanart})</visible>
+						<visible ifSubset="custombuilds:retrofreshbat">!exists({game:image})</visible>
+						<visible if="{system.theme} == 'switch'">!exists(${extgameartpng})</visible>
+						<path>${intfanartfresh}</path>
+						<saturation>0</saturation>
+						<pos>0 0</pos>
+						<origin>0 0</origin>
+						<minSize>1.04 1</minSize>
+						<scale>0.95</scale>
+						<zIndex>3</zIndex>
+						<storyboard event="activate">
+							<animation property="color" to="FFFFFFFF" begin="" duration="150" mode="Linear"/>
+						</storyboard>
+						<storyboard event="deactivate">
+							<animation property="color" to="858585ff" begin="" duration="250" mode="Linear"/>
+						</storyboard>
+						<storyboard event="scroll">
+							<animation property="color" to="858585ff" begin="" duration="250" mode="Linear"/>
+						</storyboard>
+					</image>
+					<image name="cadrefixe">
+						<path>${themePath}/_viewgame/nesicaxlive/frameoutline.png</path>
+						<pos>0 0</pos>
+						<origin>0 0</origin>
+						<size>1 0.957</size>
+						<scale>0.99</scale>
+						<zIndex>10</zIndex>
+					</image>
+					<image name="cadre">
+						<path>${themePath}/_viewgame/nesicaxlive/gameglow2.png</path>
+						<pos>-0.013 -0.05</pos>
+						<origin>0 0</origin>
+						<size>1.015 1.04</size>
+						<roundCorners>0.03</roundCorners>
+						<zIndex>20</zIndex>
+						<storyboard event="activate">
+							<animation property="opacity" to="0" begin="0" duration="0" mode="Linear"/>
+							<animation property="opacity" to="1" begin="10" duration="250" mode="Linear"/>
+						</storyboard>
+						<storyboard event="deactivate">
+							<animation property="opacity" to="0" begin="" duration="" mode="Linear"/>
+						</storyboard>
+						<storyboard event="scroll">
+							<animation property="opacity" to="0" begin="" duration="" mode="Linear"/>
+						</storyboard>
+					</image>
+					<image name="cadreglow">
+						<path>${themePath}/_viewgame/nesicaxlive/frameglow.png</path>
+						<pos>-0.02 -0.08</pos>
+						<origin>0 0</origin>
+						<size>0.858 0.915</size>
+						<scale>1.2</scale>
+						<roundCorners>1</roundCorners>
+						<linearSmooth>true</linearSmooth>
+						<zIndex>25</zIndex>
+						<storyboard event="activate">
+							<animation property="opacity" to="0" begin="0" duration="0" mode="Linear"/>
+							<animation property="opacity" to="1" begin="10" duration="150" mode="easeOut" autoReverse="true" repeat="forever"/>
+						</storyboard>
+						<storyboard event="deactivate">
+							<animation property="opacity" to="0" begin="" duration="" mode="Linear"/>
+						</storyboard>
+						<storyboard event="scroll">
+							<animation property="opacity" to="0" begin="" duration="" mode="Linear"/>
+						</storyboard>
+					</image>
+					<image name="shadowlogo" pos="0.5" origin="0.5" maxSize="0.7" linearSmooth="true">
+						<visible if="{system.theme} == 'switch'">!exists(${extgameartpng})</visible>
+						<path>{game:marquee}</path>
+						<padding>3 3 -3 -3</padding>
+						<color>00000080</color>
+						<zIndex>5</zIndex>
+					</image>
+					<image name="logo" extra="true" pos="0.5" origin="0.5" maxSize="0.7" linearSmooth="true">
+						<visible if="{system.theme} == 'switch'">!exists(${extgameartpng})</visible>
+						<path>{game:marquee}</path>
+						<zIndex>6</zIndex>
+					</image>
+					<text name="ifnologojeux">
+						<visible if="{system.theme} == 'switch'">!exists(${extgameartpng})</visible>
+						<visible>!exists({game:marquee})</visible>
+						<text>{game:name}</text>
+						<fontPath>${themePath}/_viewgame/nesicaxlive/impact.ttf</fontPath>
+						<color>ffffff</color>
+						<alignment>center</alignment>
+						<fontSize>0.023</fontSize>
+						<lineSpacing>1</lineSpacing>
+						<size>0.8 0.6</size>
+						<pos>0.1 0.12</pos>
+						<glowColor>00000066</glowColor>
+						<glowSize>2</glowSize>
+						<zIndex>100</zIndex>
+					</text>
+					<image name="md_favorite">
+						<visible>{game:favorite}</visible>
+						<path>${themePath}/_viewgame/nesicaxlive/favorite.png</path>
+						<linearSmooth>true</linearSmooth>
+						<pos>0.865 0</pos>
+						<zIndex>24</zIndex>
+						<maxSize>0.4 0.4</maxSize>
+						<opacity>1</opacity>
+						<storyboard event="open">
+							<animation property="color" to="ffffff" begin="0" duration="35" mode="Linear"/>
+						</storyboard>
+						<storyboard event="activate">
+							<animation property="color" to="ebe134" begin="0" duration="250" mode="Linear"/>
+						</storyboard>
+						<storyboard event="scroll">
+							<animation property="color" to="ffffff" begin="0" duration="350" mode="Linear"/>
+						</storyboard>
+					</image>
+				</container>
+			</itemTemplate>
+		</imagegrid>
+		<!-- ############################# Elements fixe de l'IU ################################################################## -->
+		<image name="overlay" extra="true">
+			<pos>0.5 0.5</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/overlay.png</path>
+			<zIndex>3</zIndex>
+		</image>
+		<image name="background" extra="true">
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/01background.jpg</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>1</zIndex>
+		</image>
+		<image name="gameselect" extra="true">
+			<pos>0.5 0.55</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/02gameselect.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>5</zIndex>
+		</image>
+		<image name="descinfos" extra="true">
+			<pos>0.132 0.52</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.23 0.6</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/03desc.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>10</zIndex>
+		</image>
+		<image name="fondnoir" extra="true">
+			<pos>0.589 0.570</pos>
+			<size>0.656 0.653</size>
+			<origin>0.5 0.5</origin>
+			<path>${themePath}/_viewgame/nesicaxlive2/black.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>9</zIndex>
+		</image>
+		<image name="nesicaup" extra="true">
+			<pos>0.5 0.02</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/04haut.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>5</zIndex>
+		</image>
+		<image name="nesicabas" extra="true">
+			<pos>0.5 0.895</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>1 1</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/05bas.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>5</zIndex>
+		</image>
+		<image name="flecheg" extra="true">
+			<pos>0.3 0.12</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.3 0.07</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/left.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<storyboard repeatAt="1">
+				<animation property="offsetX" from="0" to="-0.01" begin="" duration="115" mode="Linear" autoReverse="true" repeat="2"/>
+				<animation property="offsetX" from="0" to="0" begin="" duration="4000" mode="Linear"/>
+			</storyboard>
+		</image>
+		<image name="fleched" extra="true">
+			<pos>0.694 0.12</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.3 0.07</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/right.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<storyboard repeatAt="1">
+				<animation property="offsetX" from="0" to="0.01" begin="" duration="115" mode="Linear" autoReverse="true" repeat="2"/>
+				<animation property="offsetX" from="0" to="0" begin="" duration="4000" mode="Linear"/>
+			</storyboard>
+		</image>
+		<!-- ############################# Elements Dynamiques ################################################################## -->
+		<image name="screenshots" extra="true">
+			<autoFade>false</autoFade>
+			<pos>0.589 0.570</pos>
+			<path>({game:image})</path>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.655 0.653</maxSize>
+			<zIndex>10</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<storyboard event="open">
+				<animation enabled="exists({game:video})" property="opacity" to="0" begin="875" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="activateNext">
+				<animation enabled="exists({game:video})" property="opacity" to="0" begin="875" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="activatePrev">
+				<animation enabled="exists({game:video})" property="opacity" to="0" begin="875" duration="150" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="deactivateNext">
+				<animation property="opacity" to="0" begin="75" duration="" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="deactivatePrev">
+				<animation property="opacity" to="0" begin="75" duration="" mode="easeIn"/>
+			</storyboard>
+		</image>
+		<video name="gameplay" extra="true">
+			<path>({game:video})</path>
+			<pos>0.589 0.570</pos>
+			<maxSize>0.655 0.653</maxSize>
+			<origin>0.5 0.5</origin>
+			<delay>0.3</delay>
+			<effect>none</effect>
+			<zIndex>11</zIndex>
+			<storyboard event="deactivateNext">
+				<animation property="opacity" to="0" begin="75" duration="" mode="easeIn"/>
+			</storyboard>
+			<storyboard event="deactivatePrev">
+				<animation property="opacity" to="0" begin="75" duration="" mode="easeIn"/>
+			</storyboard>
+		</video>
+		<image name="nesicahaut" extra="true">
+			<pos>0.589 0.570</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.655 0.653</maxSize>
+			<color>FFFFFF60</color>
+			<tile>true</tile>
+			<path>${themePath}/_common/shaders/scanlines01.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>12</zIndex>
+		</image>
+		<!-- ############################# Case contrôle ################################################################## -->
+		<text name="lblcontrol" extra="true">
+			<origin>0.5 0.5</origin>
+			<pos>0.13 0.67</pos>
+			<size>0.1 0.1</size>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/Geforce_Bold.ttf</fontPath>
+			<text>Pour jouer :</text>
+			<alignment>center</alignment>
+			<fontSize>0.020</fontSize>
+			<zIndex>100</zIndex>
+			<color>dddddd</color>
+		</text>
+		<image name="nesicaediteur" extra="true">
+			<path>${extmanufacturer}</path>
+			<path if="${system.manufacturer} == 'Collections'">${extgamesyst}</path>
+			<linearSmooth>true</linearSmooth>
+			<pos>0.13 0.77</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.08 0.03</maxSize>
+			<horizontalAlignment>center</horizontalAlignment>
+			<verticalAlignment>center</verticalAlignment>
+			<zIndex>80</zIndex>
+		</image>
+		<!-- ############################# Affichage dynamique des contrôles ################################################################## -->
+		<image name="wheelgame" extra="true">
+			<visible>{game:wheelGame}</visible>
+			<pos>0.13 0.72</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.07 0.07</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive/F1B9.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<opacity>1</opacity>
+		</image>
+		<image name="gungame" extra="true">
+			<visible>{game:gunGame}</visible>
+			<pos>0.13 0.72</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.07 0.07</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive/F05B.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<opacity>1</opacity>
+		</image>
+		<gameextras name="gameextras">
+			<path>${themePath}/_ViewGame/Nesicaxlive/_Controls/${system.theme}/</path>
+		</gameextras>
+		<image name="Customcontrol" extra="true">
+			<autoFade>false</autoFade>
+			<visible>!{game:gunGame} &amp;&amp; !{game:wheelGame}</visible>
+			<pos>0.13 0.72</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.09 0.09</maxSize>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<opacity>1</opacity>
+		</image>
+		<image name="controllers" extra="true">
+			<visible>!{game:gunGame} &amp;&amp; !{game:wheelGame} &amp;&amp; !exists("${themePath}/_viewgame/nesicaxlive/_controls/${system.theme}/" + stem({game:rom}) + ".xml")</visible>
+			<pos>0.13 0.72</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.07 0.07</maxSize>
+			<path>${themePath}/_Common/controllers/${system.theme}.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>99</zIndex>
+			<opacity>1</opacity>
+		</image>
+		<!-- ############################# Metadata et autres infos ################################################################## -->
+		<text name="gamename" extra="true">
+			<text>{game:name}</text>
+			<color>ffffffff</color>
+			<pos>0.5 0.22</pos>
+			<size>0.9 0.10</size>
+			<glowColor>00000016</glowColor>
+			<glowSize>1</glowSize>
+			<fontSize>0.03</fontSize>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/impact.ttf</fontPath>
+			<zIndex>150</zIndex>
+			<origin>0.5 0.5</origin>
+			<alignment>center</alignment>
+		</text>
+		<text name="md_description">
+			<alignment>left</alignment>
+			<verticalAlignment>top</verticalAlignment>
+			<color>ffffffff</color>
+			<pos>0.133 0.48</pos>
+			<origin>0.5	0.5</origin>
+			<size>0.24 0.3</size>
+			<padding>0.01 0 0.01 0.02</padding>
+			<glowColor>000000</glowColor>
+			<glowSize>1</glowSize>
+			<fontSize>0.025</fontSize>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/aura4k.ttf</fontPath>
+			<zIndex>150</zIndex>
+			<origin>0.5 0.5</origin>
+		</text>
+		<image name="nbrjoueurs" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.052 0.273</pos>
+			<maxSize>0.06 0.02</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>left</horizontalAlignment>
+			<path>${themePath}/_viewgame/nesicaxlive2/joueur.png</path>
+		</image>
+		<text name="players" extra="true">
+			<text>{game:players}</text>
+			<origin>0.5 0.5</origin>
+			<pos>0.032 0.273</pos>
+			<size>0.029 0.035</size>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/Geforce_Bold.ttf</fontPath>
+			<alignment>center</alignment>
+			<fontSize>0.020</fontSize>
+			<zIndex>100</zIndex>
+		</text>
+		<image name="dates" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.077 0.273</pos>
+			<maxSize>0.06 0.02</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>left</horizontalAlignment>
+			<path>${themePath}/_viewgame/nesicaxlive2/date.png</path>
+		</image>
+		<text name="releasedate" extra="true">
+			<text>{game:releaseyear}</text>
+			<origin>0.5 0.5</origin>
+			<pos>0.065 0.273</pos>
+			<size>0.029 0.035</size>
+			<forceUppercase>0</forceUppercase>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/Geforce_Bold.ttf</fontPath>
+			<alignment>center</alignment>
+			<fontSize>0.020</fontSize>
+			<zIndex>100</zIndex>
+		</text>
+		<image name="score" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.118 0.273</pos>
+			<maxSize>0.06 0.02</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>left</horizontalAlignment>
+			<path>${themePath}/_viewgame/nesicaxlive2/score.png</path>
+		</image>
+		<rating name="md_rating">
+			<visible>true</visible>
+			<pos>0.090 0.266</pos>
+			<size>0.001 0.014</size>
+			<color>000000</color>
+			<zIndex>100</zIndex>
+		</rating>
+		<image name="played" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.166 0.273</pos>
+			<maxSize>0.06 0.02</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>left</horizontalAlignment>
+			<path>${themePath}/_viewgame/nesicaxlive2/played2.png</path>
+		</image>
+		<text name="Nbrpartie" extra="true">
+			<origin>0.5 0.5</origin>
+			<pos>0.16 0.272</pos>
+			<size>0.045 0.028</size>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/Geforce_Bold.ttf</fontPath>
+			<text>Partie(s)</text>
+			<alignment>center</alignment>
+			<fontSize>0.020</fontSize>
+			<zIndex>100</zIndex>
+		</text>
+		<text name="md_playcount">
+			<visible>true</visible>
+			<origin>0.5 0.5</origin>
+			<pos>0.186 0.272</pos>
+			<size>0.029 0.035</size>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/Geforce_Bold.ttf</fontPath>
+			<text>1</text>
+			<alignment>center</alignment>
+			<fontSize>0.020</fontSize>
+			<zIndex>100</zIndex>
+		</text>
+		<image name="md_flag">
+			<visible>true</visible>
+			<origin>0.5 0.5</origin>
+			<pos>0.22 0.274</pos>
+			<maxSize>0.03 0.03</maxSize>
+			<linearSmooth>true</linearSmooth>
+		</image>
+		<text name="developer" extra="true">
+			<color>EFEFFF</color>
+			<pos>0.023 0.275</pos>
+			<size>0.4 0.05</size>
+			<text>Edité par {game:developer}</text>
+			<alignment>left</alignment>
+			<fontSize>0.020</fontSize>
+		</text>
+		<image name="solocontrol" extra="true">
+			<pos>0.13 0.7</pos>
+			<origin>0.5 0.5</origin>
+			<maxSize>0.2 0.2</maxSize>
+			<path>${themePath}/_viewgame/nesicaxlive2/solo.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>11</zIndex>
+		</image>
+		<!-- ############################# Images dynamiques partie droite ################################################################## -->
+		<image name="titleshots" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.9585 0.3</pos>
+			<maxSize>0.075 0.075</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>center</horizontalAlignment>
+			<path>{game:titleshot}</path>
+		</image>
+		<image name="imagedroite" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.9585 0.39</pos>
+			<maxSize>0.075 0.075</maxSize>
+			<zIndex>99</zIndex>
+			<horizontalAlignment>center</horizontalAlignment>
+			<path>{game:image}</path>
+		</image>
+		<image name="thumbdroite" extra="true">
+			<tile>false</tile>
+			<origin>0.5 0.5</origin>
+			<pos>0.9585 0.52</pos>
+			<maxSize>0.07 0.15</maxSize>
+			<zIndex>99</zIndex>
+			<linearSmooth>true</linearSmooth>
+			<horizontalAlignment>center</horizontalAlignment>
+			<path>{game:thumbnail}</path>
+		</image>
+		<!-- ############################# Dummy pour compléter la copie ################################################################## -->
+		<text name="Coins" extra="true">
+			<color>EFEFFF</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.5 0.937</pos>
+			<size>0.4 0.05</size>
+			<text>COIN(S): FREE PLAY</text>
+			<alignment>center</alignment>
+			<fontSize>0.03</fontSize>
+			<zIndex>99</zIndex>
+			<storyboard repeatAt="1">
+				<animation property="opacity" from="0" to="1" begin="" duration="800" mode="Linear" autoReverse="true" repeat="forever"/>
+			</storyboard>
+		</text>
+		<text name="VersionNesica" extra="true">
+			<color>EFEFFF</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.93 0.945</pos>
+			<size>0.4 0.05</size>
+			<text>Thème NESiCAxLive for ES (beta)</text>
+			<alignment>center</alignment>
+			<fontSize>0.02</fontSize>
+			<zIndex>99</zIndex>
+			<storyboard repeatAt="1">
+				<animation property="opacity" from="0" to="1" begin="" duration="800" mode="Linear" autoReverse="true" repeat="forever"/>
+			</storyboard>
+		</text>
+		<text name="txthaut" extra="true">
+			<alignment>left</alignment>
+			<verticalAlignment>center</verticalAlignment>
+			<singleLineScroll>true</singleLineScroll>
+			<text>Un jeu vidéo est un jeu électronique doté d'une interface utilisateur permettant une interaction humaine ludique en générant un retour visuel sur un dispositif vidéo. Le joueur de jeu vidéo dispose de périphériques pour agir sur le jeu et percevoir les conséquences de ses actes sur un environnement virtuel. Le mot « vidéo » dans le jeu vidéo fait traditionnellement référence à un dispositif d'affichage de trame, mais, à la suite de la vulgarisation du terme, il implique désormais tout type de dispositif d'affichage. Les systèmes électroniques utilisés pour jouer à des jeux vidéo, aussi appelés plates-formes, peuvent être aussi bien des ordinateurs de bureau, des appareils spécifiques comme des consoles de salon ou des bornes d'arcade, ou de petits appareils portatifs tels des consoles portables, des ordinateurs portables ou des smartphones. Les jeux vidéo spécialisés tels que les jeux d'arcade, auparavant communs, ont vu leur usage progressivement diminuer. Le jeu vidéo est aujourd'hui considéré comme une industrie et parfois envisagé comme une forme d'art. Les jeux vidéo utilisent comme périphérique d'entrée un contrôleur de jeu, qui varie selon les plates-formes. Un contrôleur peut ainsi être constitué d'un unique bouton et d'une manette de jeu, ou disposer d'une douzaine de boutons et d'un ou plusieurs joystick. Les premiers jeux sur ordinateurs personnels requéraient souvent l'achat d'un joystick, tandis que les jeux modernes sur ordinateur permettent ou imposent au joueur d'utiliser un clavier et une souris simultanément. Dans les années 2010, de nouvelles méthodes d'entrée ont émergé, comme l'observation du joueur par caméra, la détection de mouvements de périphériques tenus en mains pour les consoles de jeux vidéo, ou les écrans tactiles sur les appareils mobiles. De même, de nouvelles formes de retours sont apparues : visuels, comme la vision 3D ou en relief (avec ou sans lunettes stéréoscopiques), tactiles, avec des terminaux vibrants (sièges, volants, etc.), ou pilotés (sièges inclinables simulant l’accélération, la rotation et le freinage d'un engin).</text>
+			<color>FF0000</color>
+			<pos>0.5 0.02</pos>
+			<size>0.98 0.5</size>
+			<glowColor>000000</glowColor>
+			<glowSize>1</glowSize>
+			<fontSize>0.03</fontSize>
+			<fontPath>${themePath}/_viewgame/nesicaxlive2/aura4k.ttf</fontPath>
+			<zIndex>150</zIndex>
+			<origin>0.5 0.5</origin>
+			<opacity>0.7</opacity>
+		</text>
+	</customView>
+</theme>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme defaultView="nesicaxlive1">
+	<formatVersion>7</formatVersion>
+	<subset name="systannonce" displayName="${systannounce}" appliesTo="nesicaxlive1">
+		<include name="classiquesyst" displayName="${classiquesyst}">${themePath}/_viewgame/commune/systeme/nomsystem.xml</include>
+		<include name="desactive" displayName="${desactive}"/>
+	</subset>
+	<subset name="infosmax" displayName="${infosmax}" appliesTo="nesicaxlive1">
+		<include name="non" displayName="${no}"/>
+		<include name="oui" displayName="${yes}">${themePath}/_viewgameoption/gl-common/infosmax.xml</include>
+	</subset>
+	<!-- ################################################################################# -->
+	<!-- ######################## VUES JEUX NESiCAxLive 1 #################################### -->
+	<!-- ################################################################################# -->
+</theme>

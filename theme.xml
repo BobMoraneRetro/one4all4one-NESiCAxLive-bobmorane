@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme defaultView="nesicaxlive1">
+	<!-- <theme> -->
+	<formatVersion>7</formatVersion>
+	<variables>
+		<!-- #### System ################################################################################################################################################################# -->
+		<!-- Editer ce chemin pour déplacer les thème système et de jeux à un autre emplacement -->
+		<!-- <bobmediapath>${themePath}/../_bobmedia</bobmediapath> --> <!-- choisir ce chemin pour mettre les gametheme et systheme dans le dossier _bobmedia (par défaut) idéal pour ne rien perdre lors des maj du theme-->
+		<bobmediapath>${themePath}</bobmediapath> <!-- choisir ce chemin pour mettre les gametheme et systheme directement dans le dossier theme : atention les mise à jour du thème écraseront vos gametheme et systheme -->
+		<!-- Utilisé par nesicaxlive theme standalone -->
+		<!-- System Chemin pour les logo système clear de base -->
+		<intlogoclearpng>${themePath}/_systemmedia/_logosyst/clearlogos/${system.theme}.png</intlogoclearpng>
+		<intlogoclearfrpng>${themePath}/_systemmedia/_logosyst/clearlogos/${system.theme}-fr.png</intlogoclearfrpng>
+		<intlogoclearuspng>${themePath}/_systemmedia/_logosyst/clearlogos/${system.theme}-us.png</intlogoclearuspng>
+		<intlogoclearjppng>${themePath}/_systemmedia/_logosyst/clearlogos/${system.theme}-jp.png</intlogoclearjppng>
+		<!-- Jeux : Condition si fanart ou box 2d -->
+		<standardsbuildsfanart>exists({game:fanart}) ? {game:fanart} : {game:thumbnail}</standardsbuildsfanart>
+		<freshbuildfanart>exists({game:image}) ? {game:image} : {game:thumbnail}</freshbuildfanart>
+		<!-- System : Affichage des fanart système : fanartsyst.xml -->
+		<intfanartfresh>${themePath}/_systemmedia/_fanartsysteme/fresh/${system.theme}.jpg</intfanartfresh>
+		<!-- Bannière custom en png pour la vue nesicaxlive -->
+		<nesicabanner>"${bobmediapath}/_gamemedia/" + ({game:system:theme}) + "/banner/" + stem({game:rom}) + ".png"</nesicabanner>
+		<ifnonesicabanner>!exists("${bobmediapath}/_gamemedia/" + ({game:system:theme}) + "/banner/" + stem({game:rom}) + ".png")</ifnonesicabanner>
+		<ifnomamenesicabanner>!exists("${bobmediapath}/_gamemedia/mame/banner/" + stem({game:rom}) + ".png")</ifnomamenesicabanner>
+		<!-- Jeux : Logos Editeur -->
+		<extmanufacturer>${bobmediapath}/_gamemedia/_manufacturer/{game:publisher}.png</extmanufacturer>
+		<!-- Syste & Jeux Logo Système en fonction du jeu -->
+		<extgamesyst>${themePath}/_systemmedia/_Logosyst/Clearlogos/{game:system}.png</extgamesyst>
+		<colordea>999999</colordea>
+		<coloract>ffffff</coloract>
+	</variables>
+	<!-- fichiers de traductions disponibles -->
+	<include>${themePath}/_common/_langs/fr.xml</include>
+	<include>${themePath}/_common/_langs/${lang}.xml</include>
+	<!-- Apparence des aides retroBAT -->
+	<include>${themePath}/screen.xml</include>
+	<include>${themePath}/help.xml</include>
+	<!-- Theme du menu principal -->
+	<include>./_common/_menu/menu.xml</include>
+	<!-- #### Partie vue système ############################################################# -->
+	<!-- Liste des vues dediees aux systèmes : systemview -->
+	<subset name="lismoi" displayName="${lismoi}">
+		<include name="tumasbienlu" displayName="${tumasbienlu}">${themePath}/_viewsystoption/sl-commun/splashounet.xml</include>
+		<include name="desactive" displayName="${desactive}"/>
+	</subset>
+	<subset name="systemview" displayName="${systlist}">
+		<include name="nesicaxlive" displayName="${systviewnesica}">${themePath}/_viewsyst/nesicaxlive.xml</include>
+	</subset>
+	<!-- ################################################################################# -->
+	<!-- ################ Vue Systeme : options communes toutes vues ##################### -->
+	<!-- ################################################################################# -->
+	<!-- Première déclaration permettant le placement du menu "région" dans le menu principal-->
+	<region region="fr">Region des systèmes</region>
+	<region region="eu">Region des systèmes</region>
+	<region region="us">region us</region>
+	<region region="jp">region jp</region>
+	<!-- Build Custom : suffixe des fanart -->
+	<subset name="custombuilds" displayName="${packcustombuild}">
+		<include name="standardbuilds" displayName="${packcustombuildsno}"/>
+		<include name="retrofreshbat" displayName="${packretrofreshbat}"/>
+	</subset>
+	<subset name="systspacer001" displayName="  ">
+		<include name=" " displayName=" "/>
+	</subset>
+	<subset name="iconset" displayName="${iconset}">
+		<include name="Position seulement" displayName="${iconsetposition}">${themePath}/_common/help/_iconsets/buttons.xml</include>
+		<include name="Standard">${themePath}/_common/help/_iconsets/default.xml</include>
+		<include name="ARCADE">${themePath}/_common/help/_iconsets/arcade.xml</include>
+		<include name="SNES">${themePath}/_common/help/_iconsets/snes.xml</include>
+		<include name="SNES ALT">${themePath}/_common/help/_iconsets/snesalt.xml</include>
+		<include name="XBox">${themePath}/_common/help/_iconsets/xbox.xml</include>
+		<include name="Xbox One">${themePath}/_common/help/_iconsets/xboxone.xml</include>
+		<include name="Default PSX">${themePath}/_common/help/_iconsets/psx.xml</include>
+		<include name="PSX ALT">${themePath}/_common/help/_iconsets/psx1.xml</include>
+		<include name="Switch">${themePath}/_common/help/_iconsets/switch.xml</include>
+	</subset>
+	<subset name="colorhelp" displayName="${colorhelp}">
+		<include name="default" displayName="${default}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="skyblue" displayName="${skyblue}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="purple" displayName="${purple}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="red" displayName="${red}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="aqua" displayName="${aqua}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="orange" displayName="${orange}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="green" displayName="${green}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="yellow" displayName="${yellow}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="pink" displayName="${pink}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="grey" displayName="${grey}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="lightgrey" displayName="${lightgrey}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="navy" displayName="${navy}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="violet" displayName="${violet}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="candy" displayName="${candy}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="redalt" displayName="${redalt}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="yellowalt" displayName="${yellowalt}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="greenalt" displayName="${greenalt}">${themePath}/_common/help/helpcolor.xml</include>
+		<include name="purplealt" displayName="${purplealt}">${themePath}/_common/help/helpcolor.xml</include>
+	</subset>
+	<subset name="systspacer002" displayName="  ">
+		<include name=" " displayName=" "/>
+	</subset>
+	<!-- Choix des logo de la wheel systèmes -->
+	<subset name="systemlogocops1" displayName="${systviewlogos}">
+		<include name="logosimple" displayName="${logosimple}">${themePath}/_viewsystoption/sl-commun/wheellook.xml</include>
+	</subset>
+	<subset name="imagefondcops1" displayName="${systviewfanart}">
+		<include name="fanartfreshone" displayName="${fanartfreshone}">${themePath}/_viewsystoption/sl-commun/fanartsyst.xml</include>
+		<include name="fanartcustom" displayName="${fanartsystcustom}">${themePath}/_viewsystoption/sl-commun/fanartsyst.xml</include>
+	</subset>
+	<!-- Affichage du nombre de jeux -->
+	<subset name="nbrjeuxcops1" ifSubset="systemview:coinopsnext1|coinopsnext2|copscurve|hyperspin|zspin|nesicaxlive" displayName="${systviewtotal}">
+		<include name="nbrjeux" displayName="${yes}">${themePath}/_viewsystoption/sl-commun/nbrejeux.xml</include>
+		<include name="desactive" displayName="${no}">${themePath}/_viewsystoption/sl-commun/nbrejeux.xml</include>
+	</subset>
+	<subset name="systspacer003" displayName="  ">
+		<include name=" " displayName=" "/>
+	</subset>
+	<!-- ################################################################################# -->
+	<!-- ######################## VUES GAMELISTS ######################################### -->
+	<!-- ################################################################################# -->
+	<include>${themePath}/deactivateview.xml</include>
+	<!-- ############################################################################################ -->
+	<!-- ######################## Options des vues GAMELISTS ######################################## -->
+	<!-- ############################################################################################ -->
+	<include>${themePath}/_advancedusers.xml</include>
+</theme>
