@@ -98,7 +98,7 @@
 			<pos>0 0</pos>
 			<origin>0 0</origin>
 			<maxSize>1 1</maxSize>
-			<path>${themePath}/_viewgame/nesicaxlive/01Background.png</path>
+			<path>${themePath}/_viewgame/nesicaxlive/01background.png</path>
 			<gradientType>horizontal</gradientType>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>1</zIndex>
