@@ -490,7 +490,7 @@
 			<pos>0.91 0.57</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.05 0.05</maxSize>
-			<path>${themePath}/_viewgame/nesicaxlive/F1B9.png</path>
+			<path>${themePath}/_viewgame/nesicaxlive/f1b9.png</path>
 			<gradientType>horizontal</gradientType>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>
@@ -502,7 +502,7 @@
 			<pos>0.91 0.57</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.05 0.05</maxSize>
-			<path>${themePath}/_viewgame/nesicaxlive/F05B.png</path>
+			<path>${themePath}/_viewgame/nesicaxlive/f05b.png</path>
 			<gradientType>horizontal</gradientType>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>
@@ -556,7 +556,7 @@
 			<pos>0.91 0.57</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.05 0.05</maxSize>
-			<path>${themePath}/_Common/controllers/${system.theme}.png</path>
+			<path>${themePath}/_common/controllers/${system.theme}.png</path>
 			<gradientType>horizontal</gradientType>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>

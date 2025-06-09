@@ -23,7 +23,7 @@
 			<centerSelection>true</centerSelection>
 			<scrollDirection>horizontal</scrollDirection>
 			<!-- <scrollbar>false</scrollbar> -->
-			<scrollSound>${themePath}/_viewgame/nesicaxlive/Click.mp3</scrollSound>
+			<scrollSound>${themePath}/_viewgame/nesicaxlive/click.mp3</scrollSound>
 			<showVideoAtDelay>-1</showVideoAtDelay>
 			<itemTemplate>
 				<storyboard event="activate">
@@ -324,44 +324,66 @@
 		</image>
 		<!-- ############################# Affichage dynamique des contrôles ################################################################## -->
 		<image name="wheelgame" extra="true">
+			<autoFade>false</autoFade>
 			<visible>{game:wheelGame}</visible>
 			<pos>0.13 0.72</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.07 0.07</maxSize>
-			<path>${themePath}/_viewgame/nesicaxlive/F1B9.png</path>
+			<path>${themePath}/_viewgame/nesicaxlive/f1b9.png</path>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>
 			<opacity>1</opacity>
 		</image>
 		<image name="gungame" extra="true">
+			<autoFade>false</autoFade>
 			<visible>{game:gunGame}</visible>
 			<pos>0.13 0.72</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.07 0.07</maxSize>
-			<path>${themePath}/_viewgame/nesicaxlive/F05B.png</path>
+			<path>${themePath}/_viewgame/nesicaxlive/f05b.png</path>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>
 			<opacity>1</opacity>
 		</image>
-		<gameextras name="gameextras">
-			<path>${themePath}/_ViewGame/Nesicaxlive/_Controls/${system.theme}/</path>
-		</gameextras>
-		<image name="Customcontrol" extra="true">
+		<image name="controlpergame" extra="true">
 			<autoFade>false</autoFade>
 			<visible>!{game:gunGame} &amp;&amp; !{game:wheelGame}</visible>
+			<path>"${bobmediapath}/_gamemedia/" + ({game:system:theme}) + "/_controls/" + stem({game:rom}) + ".png"</path>
+			<path if="{system.theme} == 'fbneo' || 
+			{system.theme} == 'cps1' || 
+			{system.theme} == 'cps2' || 
+			{system.theme} == 'cps3' || 
+			{system.theme} == 'cave' ">"${bobmediapath}/_gamemedia/mame/_controls/" + stem({game:rom}) + ".png"</path>
 			<pos>0.13 0.72</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.09 0.09</maxSize>
 			<linearSmooth>true</linearSmooth>
+			<gradientType>horizontal</gradientType>
 			<zIndex>99</zIndex>
 			<opacity>1</opacity>
 		</image>
+		<!-- <image name="customcontrol" extra="true"> -->
+		<!-- <autoFade>false</autoFade> -->
+		<!-- <visible>!{game:gunGame} &amp;&amp; !{game:wheelGame}</visible> -->
+		<!-- <pos>0.13 0.72</pos> -->
+		<!-- <origin>0.5 0.5</origin> -->
+		<!-- <maxSize>0.09 0.09</maxSize> -->
+		<!-- <linearSmooth>true</linearSmooth> -->
+		<!-- <zIndex>99</zIndex> -->
+		<!-- <opacity>1</opacity> -->
+		<!-- </image> -->
 		<image name="controllers" extra="true">
-			<visible>!{game:gunGame} &amp;&amp; !{game:wheelGame} &amp;&amp; !exists("${themePath}/_viewgame/nesicaxlive/_controls/${system.theme}/" + stem({game:rom}) + ".xml")</visible>
+			<autoFade>false</autoFade>
+			<visible>!{game:gunGame} &amp;&amp; !{game:wheelGame} &amp;&amp; !exists("${bobmediapath}/_gamemedia/" + ({game:system:theme}) + "/_controls/" + stem({game:rom}) + ".png")</visible>
+			<visible if="{system.theme} == 'fbneo' || 
+			{system.theme} == 'cps1' || 
+			{system.theme} == 'cps2' || 
+			{system.theme} == 'cps3' || 
+			{system.theme} == 'cave' ">!{game:gunGame} &amp;&amp; !{game:wheelGame} &amp;&amp; !exists("${bobmediapath}/_gamemedia/mame/_controls/" + stem({game:rom}) + ".png")</visible>
 			<pos>0.13 0.72</pos>
 			<origin>0.5 0.5</origin>
 			<maxSize>0.07 0.07</maxSize>
-			<path>${themePath}/_Common/controllers/${system.theme}.png</path>
+			<path>${themePath}/_common/controllers/${system.theme}.png</path>
 			<linearSmooth>true</linearSmooth>
 			<zIndex>99</zIndex>
 			<opacity>1</opacity>
