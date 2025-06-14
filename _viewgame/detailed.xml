@@ -61,10 +61,10 @@
 			<zIndex>2</zIndex>
 		</image>
 		<image name="fanartPreset" extra="true">
-			<visible ifSubset="custombuilds:standardbuilds">${standardsbuildsfanarttestyes}</visible>
-			<visible ifSubset="custombuilds:retrofreshbat">${freshbuildfanarttestyes}</visible>
-			<path ifSubset="custombuilds:standardbuilds">{game:fanart}</path>
-			<path ifSubset="custombuilds:retrofreshbat">{game:image}</path>
+			<!-- <path ifSubset="custombuilds:standardbuilds">{game:fanart}</path> -->
+			<!-- <path ifSubset="custombuilds:retrofreshbat">{game:image}</path> -->
+			<path ifSubset="custombuilds:standardbuilds">firstfile(${standardsbuildsfanart},{game:image},{game:boxart})</path>
+			<path ifSubset="custombuilds:retrofreshbat">firstfile(${freshbuildfanart},{game:fanart},{game:boxart})</path>
 			<autoFade>false</autoFade>
 			<gradientType>horizontal</gradientType>
 			<linearSmooth>true</linearSmooth>

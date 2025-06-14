@@ -398,6 +398,7 @@
 		<jeuprec>Previous Game</jeuprec>
 		<systsuiv>Next System</systsuiv>
 		<systprec>Previous System</systprec>
-		<iconsetposition>Buttons position only</iconsetposition>
+		<iconsetposition>Button position only</iconsetposition>
+		<nesicaxlivedemomode>NESiCAxLive Demo Mode</nesicaxlivedemomode>
 	</variables>
 </theme>

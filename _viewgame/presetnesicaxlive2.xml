@@ -225,6 +225,14 @@
 			<linearSmooth>true</linearSmooth>
 			<zIndex>5</zIndex>
 		</image>
+		<image name="nesicabashelper" extra="true">
+			<pos>0.5015 0.94</pos>
+			<origin>0.5 0.5</origin>
+			<size>1 0.05</size>
+			<path>${themePath}/_viewgame/nesicaxlive2/03helper.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>5</zIndex>
+		</image>
 		<image name="flecheg" extra="true">
 			<pos>0.3 0.12</pos>
 			<origin>0.5 0.5</origin>
@@ -563,7 +571,7 @@
 		<text name="Coins" extra="true">
 			<color>EFEFFF</color>
 			<origin>0.5 0.5</origin>
-			<pos>0.5 0.937</pos>
+			<pos>0.5 0.943</pos>
 			<size>0.4 0.05</size>
 			<text>COIN(S): FREE PLAY</text>
 			<alignment>center</alignment>

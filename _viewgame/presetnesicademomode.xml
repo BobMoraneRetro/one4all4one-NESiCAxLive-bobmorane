@@ -2,7 +2,7 @@
 <theme>
 	<formatVersion>7</formatVersion>
 	<!--custom-->
-	<customView name="nesicaxlivedemomode" inherits="grid">
+	<customView name="nesicaxlivedemomode" displayName="${nesicaxlivedemomode}" inherits="grid">
 			<video name="md_video">
 			<visible>false</visible>
 		</video>
